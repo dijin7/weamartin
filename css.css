@@ -1,0 +1,43 @@
+
+.contenedor_imagen{
+    position: relative;
+    display: inline-block;
+}
+
+
+.imagen_con_cuadro{
+    width: 50vh;
+    height: 50vh;
+
+    /*le bajo la capa de prioridad a la imagen de fondo*/
+    z-index: -1;
+}
+
+.recuadro_fuera_imagen{
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    background-color: #111a;
+
+
+    width: 40vw;
+    height: 40vh;
+
+
+    /*le estoy restando la mitad de las imagenes*/
+    margin-top: -25vh;
+    margin-left: 25vh;
+
+
+    /*priorizo que esten al frente para que no se sobrepongan las otras imagenes*/
+    z-index: +1;
+
+    aspect-ratio: 1 / 4;
+}
+
+
+.imagen_con_cuadro:hover + .recuadro_fuera_imagen{
+    display:block;
+}
+
+
